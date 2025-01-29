@@ -3,7 +3,7 @@
 ## Project Description
 This is a responsive and interactive web application built using **Next.js**, **Chakra UI**, and **Recharts**. The app fetches data from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/), visualizes it using charts, and allows users to filter the data for specific insights. The application is deployed on **AWS Amplify**.
 
-**Live Demo**: [https://main.d1f1vm5gjkq7hx.amplifyapp.com/](https://main.d1f1vm5gjkq7hx.amplifyapp.com/)
+**Live Demo**: [https://main.d3cgmzqfku2vhx.amplifyapp.com/](https://main.d3cgmzqfku2vhx.amplifyapp.com/)
 
 ---
 
