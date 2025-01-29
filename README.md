@@ -94,7 +94,7 @@ frontend-assessment/
 
 ## Screenshots
 ![Desktop View](./public/DesktopView.png)
-![Mobile View](./public/mobileView.png)
+![Mobile View](./public/MobileView.png)
 
 ---
 
