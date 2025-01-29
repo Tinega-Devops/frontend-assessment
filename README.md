@@ -1,16 +1,16 @@
 # Frontend Developer Assessment
 
 ## Project Description
-This is a responsive and interactive web application built using **Next.js**, **Chakra UI**, and **Recharts**. The app fetches data from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/), visualizes it using charts, and allows users to filter the data for specific insights. The application is deployed on **AWS Amplify**.
+This is a responsive and interactive web application built using **Next.js**, **Chakra UI**, and **Recharts**. The app fetches cryptocurrency market data from the [CoinGecko API](https://www.coingecko.com/en/api/documentation), visualizes it using charts, and allows users to filter the data to analyze trends over the past 90 days. The application is deployed on **AWS Amplify**.
 
 **Live Demo**: [https://main.d3cgmzqfku2vhx.amplifyapp.com/](https://main.d3cgmzqfku2vhx.amplifyapp.com/)
 
 ---
 
 ## Features
-- **Data Fetching**: Fetches posts data from JSONPlaceholder API.
-- **Data Visualization**: Displays the data in a line chart using Recharts.
-- **User Interaction**: Allows users to filter data by `title`.
+- **Data Fetching**: Fetches historical market data from the CoinGecko API.
+- **Data Visualization**: Displays price trends over 90 days using Recharts.
+- **User Interaction**: Allows users to filter and analyze trends for specific cryptocurrencies.
 - **Responsive Design**: Built with Chakra UI for a seamless experience across devices.
 - **Modular Components**: Reusable and well-structured components for maintainability.
 
@@ -18,6 +18,7 @@ This is a responsive and interactive web application built using **Next.js**, **
 
 ## Technologies Used
 - **Frontend Framework**: [Next.js](https://nextjs.org/)
+- **State Management**: [Redux Toolkit (RTK Query)](https://redux-toolkit.js.org/rtk-query/overview)
 - **UI Component Library**: [Chakra UI](https://chakra-ui.com/)
 - **Charting Library**: [Recharts](https://recharts.org/)
 - **Hosting Platform**: [AWS Amplify](https://aws.amazon.com/amplify/)
@@ -36,15 +37,18 @@ This is a responsive and interactive web application built using **Next.js**, **
    git clone https://github.com/Tinega-Devops/frontend-assessment.git
    cd frontend-assessment
    ```
+
 2. Install dependencies:
    ```bash
    npm install
    ```
+
 3. Run the development server:
    ```bash
    npm run dev
    ```
-4. Open your browser and navigate to `http://localhost:3000`.
+
+4. Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
 
 ---
 
@@ -52,38 +56,39 @@ This is a responsive and interactive web application built using **Next.js**, **
 ```
 frontend-assessment/
 ├── components/
-│   ├── ChartArea.ts        # Recharts component for data visualization
-│   ├── Filters.tsx       # Filter component for user interaction
-│   ├── Header.tsx       # Header component
-│   └── Footer.tsx       # Footer component
+│   ├── Chart.tsx         # Recharts component for data visualization
+│   ├── Filters.tsx       # Dropdown component for selecting cryptocurrencies
+│   ├── Header.tsx        # Header component
+│   ├── Footer.tsx        # Responsive footer component
 ├── app/
-│   ├── pages.tsx        # Main page with data fetching and rendering
-│   └── layout.tsx        # A page for displaying the app layout 
-│   └── providers.tsx     # API routes (if needed)
-├── public/               # Contains all the static resources for the app
-├── service/
-│   └── api.js          # API service for fetching data
+│   ├── page.tsx          # Main page with data fetching and rendering
+│   ├── layout.tsx        # Application layout
+│   ├── providers.tsx     # API routes and store provider
+├── public/               # Contains all static resources
+├── store/
+│   ├── store.ts          # Redux store setup
+│   ├── api.ts            # RTK Query API service for fetching data
 ├── styles/
-│   └── globals.css     # Global styles
-├── README.md           # Project documentation
-├── package.json        # Project dependencies
-└── tsconfig.json        # TypeScript configuration
-└── next.config.ts      # Next.js configuration
+│   ├── globals.css       # Global styles
+├── README.md             # Project documentation
+├── package.json          # Project dependencies
+├── tsconfig.json         # TypeScript configuration
+├── next.config.ts        # Next.js configuration
 ```
 
 ---
 
 ## Known Issues
-- The API has a limited dataset, so filtering options are restricted to available `title`s.
-- The chart may not display optimally on very small screens (e.g., mobile devices).
+- The CoinGecko API has rate limits, so excessive requests may be throttled.
+- The chart may not display optimally on very small screens.
 
 ---
 
 ## Future Improvements
-- Add more chart types (e.g., line chart, pie chart) for better data visualization.
-- Implement pagination or lazy loading for large datasets.
+- Add support for multiple time intervals (e.g., 30 days, 180 days, 1 year).
+- Implement real-time price updates using WebSockets.
 - Enhance error handling for API failures.
-- Add unit tests and integration tests for better code reliability.
+- Add unit tests and integration tests for better reliability.
 
 ---
 
